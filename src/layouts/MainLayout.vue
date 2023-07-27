@@ -27,27 +27,94 @@
     </q-header>
 
     <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
+        v-model="leftDrawerOpen"
+        show-if-above
+        :width="200"
+        :breakpoint="400"
+      >
+        <q-scroll-area style="height: calc(100% - 192px); margin-top: 192px; border-right: 1px solid #ddd">
+          <q-list padding>
+            <!-- item -->
+            <q-item 
+              to="/" 
+              exact
+              clickable 
+              v-ripple
+              >
+              <q-item-section avatar>
+                <q-icon name="list" />
+              </q-item-section>
 
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
+              <q-item-section>
+                Todo
+              </q-item-section>
+            </q-item>
+
+            <!-- item -->
+            <q-item 
+              to="/help" 
+              exact
+              clickable 
+              v-ripple
+              >
+              <q-item-section avatar>
+                <q-icon name="help" />
+              </q-item-section>
+
+              <q-item-section>
+                Help
+              </q-item-section>
+            </q-item>
+
+            <!-- -------- -->
+
+            <!-- <q-item active clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="star" />
+              </q-item-section>
+
+              <q-item-section>
+                Star
+              </q-item-section>
+            </q-item>
+
+            <q-item clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="send" />
+              </q-item-section>
+
+              <q-item-section>
+                Send
+              </q-item-section>
+            </q-item>
+
+            <q-item clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="drafts" />
+              </q-item-section>
+
+              <q-item-section>
+                Drafts
+              </q-item-section>
+            </q-item> -->
+          </q-list>
+        </q-scroll-area>
+
+        <q-img class="absolute-top" src="/image/banner.jpg" style="height: 192px">
+          <div class="absolute-bottom bg-transparent">
+            <q-avatar size="56px" class="q-mb-sm">
+              <img src="https://media.licdn.com/dms/image/D5603AQEhH5GJLNOKdg/profile-displayphoto-shrink_800_800/0/1679726608208?e=2147483647&v=beta&t=mQ7wzcvgvAoa8fRA__ihe6drTVOmP2BnlyNigvThZuY">
+            </q-avatar>
+            <div class="text-weight-bold">Putu Adi</div>
+            <div>@adisantikajayaa</div>
+          </div>
+        </q-img>
+      </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <keep-alive>
+        <router-view />
+      </keep-alive>
     </q-page-container>
   </q-layout>
 </template>
@@ -66,7 +133,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-import EssentialLink from 'components/EssentialLink.vue';
+// import EssentialLink from 'components/EssentialLink.vue';
 import { date } from 'quasar'
 
 const linksList = [
@@ -117,9 +184,9 @@ const linksList = [
 export default defineComponent({
   name: 'MainLayout',
 
-  components: {
-    EssentialLink
-  },
+  // components: {
+  //   EssentialLink
+  // },
 
   setup () {
     const leftDrawerOpen = ref(false)
