@@ -1,3 +1,5 @@
+### i use yarn before hahaha
+
 # Make Simple Aplication convert to ANDROID and WEBSITE
 
 ## consume API
