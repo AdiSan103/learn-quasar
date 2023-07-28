@@ -1,19 +1,22 @@
 i use yarn before hahaha
- 
+
 support tutorial from : (video link)[https://www.youtube.com/watch?v=GV-D85D9KJQ&t=1824s&ab_channel=MakeAppswithDanny]
 
--------------------------------------------------------------
+---
 
-#### quasar dev -m electron 
+#### quasar dev -m electron
 
 When you run this command, Quasar will launch your application using Electron, allowing you to develop and test your Quasar-based desktop application.
-
 
 ### quasar build -m electron
 
 As of my last update in September 2021, the command "quasar build -m electron" is used in Quasar Framework to build your application for Electron. This command bundles your Quasar-based web application into an Electron desktop application package, allowing you to distribute it as a standalone desktop app for different platforms (Windows, macOS, Linux).
 
--------------------------------------------------------------
+---
+
+### quasar build -m capacitor -T [android]
+
+---
 
 cordova or electron for cli quasar?
 
@@ -37,7 +40,7 @@ In summary, if you want to build mobile applications, choose Cordova integration
 
 Before deciding, consider the specific requirements of your project and the target platforms to ensure you choose the right integration that meets your application's needs.
 
--------------------------------------------------------------
+---
 
 # Make Simple Aplication convert to ANDROID and WEBSITE
 
